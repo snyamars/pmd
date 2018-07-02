@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<ruleset name="Basic Rules"
+    xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+  <description>
+	Rules for JDBC
+  </description>
+   
+    <rule name="JDBC_Presence"
+    	  language="java"
+          message="JDBC Connection"
+          class="net.sourceforge.pmd.lang.rule.XPathRule" deprecated="false" dfa="false"
+          typeResolution="true">
+      <description>
+				JDBC Connection
+      </description>
+      <priority>5</priority>
+      <properties>
+		  <property name="version" value="2.0"/>
+          <property name="xpath">
+              <value>//Name
+    			[
+	    				contains(@Image,'.createStatement')
+	    				or contains(@Image,'.prepareCall')
+	    				or contains(@Image,'.prepareStatement')
+	    				or contains(@Image,'.getConnection')   
+    			]
+             </value>
+          </property>
+      </properties>
+    </rule> 
+	
+	      <rule name="Updated_Interfaces"
+    	  language="java"
+          message="Interfaces java.sql.Connection, java.sql.Driver, javax.sql.CommonDatasource, and java.sql.Statement"
+          class="net.sourceforge.pmd.lang.rule.XPathRule" deprecated="false" dfa="false"
+          typeResolution="true">
+      <description>
+				Interfaces new methods need to be implemented
+      </description>
+      <priority>3</priority>
+      <properties>
+		  <property name="version" value="2.0"/>
+          <property name="xpath">
+              <value>//ImplementsList/ClassOrInterfaceType
+						[
+						  contains(@Image, 'java.sql.Connection')
+						or contains(@Image, 'Connection')
+						or contains(@Image, 'java.sql.Driver')
+						or contains(@Image, 'Driver')
+						or contains(@Image, 'javax.sql.CommonDatasource')
+						or contains(@Image, 'CommonDatasource')
+						or contains(@Image, 'java.sql.Statement')
+						or contains(@Image, 'Statement')
+						
+						]
+              </value>
+          </property>
+      </properties>
+    </rule> 
+	
+	<!--rule name="Inline_Sql_JDBCTEMPLATE_Query"
+    	  since="0.1"
+          message="Inline Sql Manager"
+          class="net.sourceforge.pmd.rules.XPathRule"
+          externalInfoUrl="">
+      <description>
+				DML STATEMENTS IDENTIFIER
+      </description>
+      <priority>3</priority>
+      <properties>
+          <property name="xpath">
+              <value>
+			    <![CDATA[
+					//BlockStatement/Statement/StatementExpression/PrimaryExpression/PrimaryPrefix/Name
+						[
+						   starts-with(upper-case(@Image), 'JDBCTEMPLATE.QUERY')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.UPDATE')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.APPLYSTATEMENTSETTINGS')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.BATCHUPDATE')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.CALL')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.EXECUTE')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.EXTRACTOUTPUTPARAMETERS')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.EXTRACTRETURNEDRESULTSETS')
+						or starts-with(upper-case(@Image), 'JDBCTEMPLATE.PROCESSRESULTSET')       
+						]
+			   ]]>
+              </value>
+          </property>
+      </properties>
+    </rule-->
+   
+</ruleset>
