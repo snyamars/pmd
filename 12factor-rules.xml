@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<ruleset name="Java Logging"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+  <description>
+The Java Logging ruleset contains a collection of rules that find questionable usages of the logger.
+  </description>
+
+    <!-- Rules, that have been moved into a category -->
+    <rule ref="category/java/errorprone.xml/InvalidSlf4jMessageFormat" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/LoggerIsNotStaticFinal" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/MoreThanOneLogger" deprecated="true" />
+
+    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" deprecated="true" />
+    <!-- GuardLogStatementJavaUtil has been merged into GuardLogStatement -->
+    <rule ref="category/java/bestpractices.xml/GuardLogStatement" name="GuardLogStatementJavaUtil" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/SystemPrintln" deprecated="true" />
+	
+	<rule ref="category/java/bestpractices.xml/LooseCoupling" deprecated="true" />
+
+    <rule ref="category/java/design.xml/CouplingBetweenObjects" deprecated="true" />
+    <rule ref="category/java/design.xml/ExcessiveImports" deprecated="true" />
+    <rule ref="category/java/design.xml/LawOfDemeter" deprecated="true" />
+    <rule ref="category/java/design.xml/LoosePackageCoupling" deprecated="true" />
+	
+	<!-- Rules, that have been moved into a category -->
+
+    <rule ref="category/java/errorprone.xml/AssignmentToNonFinalStatic" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/CloseResource" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/CompareObjectsWithEquals" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/IdempotentOperations" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/InstantiationToGetClass" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/NonStaticInitializer" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/ReturnEmptyArrayRatherThanNull" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/SingleMethodSingleton" deprecated="true" />
+    <rule ref="category/java/errorprone.xml/SingletonClassReturningNewInstance" deprecated="true" />
+
+    <rule ref="category/java/multithreading.xml/AvoidSynchronizedAtMethodLevel" deprecated="true" />
+    <rule ref="category/java/multithreading.xml/NonThreadSafeSingleton" deprecated="true" />
+    <rule ref="category/java/multithreading.xml/UnsynchronizedStaticDateFormatter" deprecated="true" />
+    <rule ref="category/java/multithreading.xml/UseNotifyAllInsteadOfNotify" deprecated="true" />
+
+    <rule ref="category/java/bestpractices.xml/PositionLiteralsFirstInCaseInsensitiveComparisons" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/PositionLiteralsFirstInComparisons" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/PreserveStackTrace" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/UseCollectionIsEmpty" deprecated="true" />
+    <rule ref="category/java/bestpractices.xml/UseVarargs" deprecated="true" />
+
+    <rule ref="category/java/performance.xml/OptimizableToArrayCall" deprecated="true" />
+    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement" deprecated="true" />
+
+    <rule ref="category/java/documentation.xml/UncommentedEmptyConstructor" deprecated="true" />
+    <rule ref="category/java/documentation.xml/UncommentedEmptyMethodBody" deprecated="true" />
+	
+	<rule ref="category/java/IdentifyFileIO.xml/File_Sys_Properties_Load" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/File_Output_Strm_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/File_Input_Strm_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/IO_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/File_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/IO_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/FileInputStream_Usage" deprecated="true" />
+    <rule ref="category/java/IdentifyFileIO.xml/FileOutputStream_Usage" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/FileReader_Usage" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/FileWriter_Usage" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/File_Reader_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/File_Writer_Import" deprecated="true" />
+	<rule ref="category/java/IdentifyFileIO.xml/Random_Access_File" deprecated="true" />
+	
+	<rule ref="category/java/IdentifyLogs.xml/Inline_JAVA_UTIL_LOGGER_IMPORT" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_Log" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_SOP" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_SOP_ERROR" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_GWT_LOG" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_APACHE_COMMONS_LOG_IMPORT" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Inline_APACHE_LOG4J_IMPORT" deprecated="true" />
+	<rule ref="category/java/IdentifyLogs.xml/Catch_StackTrace" deprecated="true" />
+	
+	<rule ref="category/java/jdbctest.xml/JDBC_Presence" deprecated="true" />
+	<rule ref="category/java/jdbctest.xml/Updated_Interfaces" deprecated="true" />
+	
+	<rule ref="category/java/IdentifySoapRest.xml/SERVICE_SPRING_import" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/SERVICE_ORACLE_import" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/SOAP_USAGE_NAME" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/SOAP_USAGE_CLASSORINTF" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/WS_SERVICE_JAVA_import" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/Webservice_Annotation" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/REST_Methods" deprecated="true" />
+	<rule ref="category/java/IdentifySoapRest.xml/Java_Rest_Import" deprecated="true" />
+	
+	
+</ruleset>
